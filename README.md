@@ -18,4 +18,6 @@ Features:
 
 ## Technology stack
 
-- [React](https://reactjs.org)
+- [![React](https://reactjs.org)](https://api.iconify.design/vscode-icons:file-type-reactjs.svg?height=32)
+- [Redux](https://redux.js.org/)
+- [Jest](https://jestjs.io)
