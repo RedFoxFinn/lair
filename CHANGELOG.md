@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](///compare/v0.3.1...v0.4.0) (2021-01-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* new component, previously non-existent
+
+### Features
+
+* added new component: header cb18f23
+
 ### [0.3.1](///compare/v0.3.0...v0.3.1) (2021-01-14)
 
 
