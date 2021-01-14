@@ -3,7 +3,7 @@
 
 ## Status
 
-![CI Status](https://github.com/RedFoxFinn/lair/workflows/unit_tests/badge.svg)
+![CI Status](https://github.com/RedFoxFinn/lair/workflows/lair frontend unit tests/badge.svg)
 
 ## Description
 
