@@ -1,7 +1,7 @@
 name: lair frontend unit tests
 on: [push]
 jobs:
-  ui_test:
+  unit_tests:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1

@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --verbose --transformIgnorePatterns 'node_modules/*'",
-    "ci-test": "react-scripts test --verbose --transformIgnorePatterns --detectOpenHandles 'node_modules/*'",
+    "ci-test": "react-scripts test --verbose --transformIgnorePatterns 'node_modules/*' --detectOpenHandles",
     "eject": "react-scripts eject",
     "cm": "git-cz",
     "release": "standard-version"
