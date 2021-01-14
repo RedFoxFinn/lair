@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {Provider} from 'react-redux';
+import Lair from './lair.jsx';
 import reportWebVitals from './reportWebVitals';
+import {ViewportProvider} from './logic/viewportHook';
+import state from './logic/redux/state';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={state}>
+      <ViewportProvider>
+        <Lair id='rff'/>
+      </ViewportProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
