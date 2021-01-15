@@ -5,10 +5,10 @@ const createInitialState = () => {
     };
 };
 
-const applicationState = (state = createInitialState(), action) => {
+const applicationReducer = (state = createInitialState(), action) => {
     switch (action.type) {
         default: return state;
     }
 };
 
-export default applicationState;
+export default applicationReducer;

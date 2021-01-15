@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import {render} from '@testing-library/react';
 import uuid from 'uuid';
 
-import state from '../../logic/redux/state';
+import state from '../../controllers/redux/state';
 import Header from './header';
 
 describe('header pane unit tests', () => {

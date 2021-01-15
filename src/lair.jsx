@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
-import Landing from './components/landing/landing';
-import {useViewport} from './logic/viewportHook';
+import Landing from './components/routes/landing/landing';
+import {useViewport} from './controllers/hooks/viewportHook';
 import styles from './tools/styles';
 
 const mapState = (state) => {

@@ -2,9 +2,11 @@
 # Lair - personal project from RedFoxFinn
 
 ![JS](https://api.iconify.design/logos:javascript.svg?height=24)
-![Node.js](https://api.iconify.design/logos:nodejs.svg?height=24)
-![React.js](https://api.iconify.design/logos:react.svg?height=24)
-![Redux.js](https://api.iconify.design/logos:redux.svg?height=24)
+![Node](https://api.iconify.design/logos:nodejs.svg?height=24)
+![Express](https://api.iconify.design/logos:express.svg?height=24)
+![React](https://api.iconify.design/logos:react.svg?height=24)
+![Redux](https://api.iconify.design/logos:redux.svg?height=24)
+![Redux-Saga](https://api.iconify.design/logos:redux-saga.svg?height=24)
 ![GraphQL](https://api.iconify.design/logos:graphql.svg?height=24)
 ![Apollo](https://api.iconify.design/logos:apollostack.svg?height=24)
 ![Jest](https://api.iconify.design/logos:jest.svg?height=24)
@@ -33,8 +35,10 @@ Features:
 
 - JavaScript
 - [Node](https://nodejs.org)
+- [Express](https://expressjs.com)
 - [React](https://reactjs.org)
 - [Redux](https://redux.js.org)
+- [Redux-Saga](https://redux-saga.js.org)
 - [React Router](https://reactrouter.com/)
 - [GraphQL](https://graphql.org)
 - [Apollo](https://apollographql.com)

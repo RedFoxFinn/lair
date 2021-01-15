@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import Lair from './lair.jsx';
 import reportWebVitals from './reportWebVitals';
-import {ViewportProvider} from './logic/viewportHook';
-import state from './logic/redux/state';
+import {ViewportProvider} from './controllers/hooks/viewportHook';
+import state from './controllers/redux/state';
 
 ReactDOM.render(
   <React.StrictMode>

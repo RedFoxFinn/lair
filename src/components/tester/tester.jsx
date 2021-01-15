@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { INCREMENT, DECREMENT, ZERO } from '../../logic/redux/testModuleActions';
+import { incrementTester, decrementTester, zeroTester } from '../../controllers/redux/actions/testModuleActions';
 
 const mapStateToProps = (state) => {
     return {
@@ -9,16 +9,19 @@ const mapStateToProps = (state) => {
     };
 };
 
+const mapActionsToProps = {
+    incrementTester, decrementTester, zeroTester
+};
+
 const Tester = (props) => {
-    const {dispatch} = props;
     const onIncrement = () => {
-        dispatch(INCREMENT());
+        props.incrementTester();
     };
     const onDecrement = () => {
-        dispatch(DECREMENT());
+        props.decrementTester();
     };
     const onZeroing = () => {
-        dispatch(ZERO());
+        props.zeroTester();
     };
 
     return <div id={props.id} data-testid={props.id} style={{ outline: '1px solid red', }}>
@@ -29,4 +32,4 @@ const Tester = (props) => {
     </div>;
 };
 
-export default connect(mapStateToProps)(Tester);
+export default connect(mapStateToProps, mapActionsToProps)(Tester);
