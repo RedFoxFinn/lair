@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](///compare/v0.7.9...v0.8.0) (2021-01-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* Redux-Saga alters state management functionality
+
+### Features
+
+* redux-saga, README, tests, structure 1b8c041
+
 ### [0.7.9](///compare/v0.7.8...v0.7.9) (2021-01-14)
 
 ### [0.7.8](///compare/v0.7.7...v0.7.8) (2021-01-14)
