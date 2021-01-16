@@ -69,8 +69,15 @@ const footer_first = () => {
 
 const footer_second = () => {
     return {
-        fonteSize: '1em',
+        fontSize: '1em',
         color: 'grey'
+    };
+};
+const footer_third = () => {
+    return {
+        fontSize: '1em',
+        color: 'grey',
+        marginLeft: '1em'
     };
 };
 
@@ -185,5 +192,5 @@ const searchField = () => {
 export default {
     header_first, header_second, failure, fetchingButton, row, column, infoRow, header_optional, 
     running, searchButtons, searchField, selection, sortingButton, sortings, success, text, larger_text,
-    footer_first, footer_second, tech_first, tech_second
+    footer_first, footer_second, footer_third, tech_first, tech_second
 };

@@ -36,7 +36,7 @@ const Double = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style=
 const Triple = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style={styles.row()} >
   <p style={styles.footer_first()} >{content.first}</p>
   <p style={styles.footer_second()} >{content.second}</p>
-  <p style={styles.footer_second()} >{content.third}</p>
+  <p style={styles.footer_third()} >{content.third}</p>
 </div>;;
 
 export default connect()(Footer);
