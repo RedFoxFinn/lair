@@ -18,6 +18,40 @@ const doubleContent = {
     first: 't1-' + newId,
     second: 't2-' + newId
 };
+const tripleContent = {
+    type: 'triple',
+    first: 't1-' + newId,
+    second: 't2-' + newId,
+    third: 't3-' + newId
+};
+
+describe('footer pane unit tests - content type triple', () => {
+    let variable = false;
+    let component;
+
+    beforeEach(() => component = render(<Provider store={state}><Footer id={newId} content={tripleContent}/></Provider>));
+
+    test('dummy test', () => {
+        expect(variable).toBe(false);
+        variable = true;
+        expect(variable).toBe(true);
+    });
+    test('footer renders', () => {
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer).toBeTruthy();
+        isCompositeComponentWithType(footer, Footer);
+    });
+    test('footer gets correct id', () => {
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer.id).toBe(`${newId}`);
+    });
+    test('footer gets correct content', () => {
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer.textContent).toContain(`${tripleContent.first}`);
+        expect(footer.textContent).toContain(`${tripleContent.second}`);
+        expect(footer.textContent).toContain(`${tripleContent.third}`);
+    });
+});
 
 describe('footer pane unit tests - content type double', () => {
     let variable = false;
