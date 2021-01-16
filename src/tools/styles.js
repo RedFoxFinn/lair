@@ -77,7 +77,7 @@ const footer_third = () => {
     return {
         fontSize: '1em',
         color: 'grey',
-        marginLeft: '1em'
+        marginLeft: '0.5em'
     };
 };
 

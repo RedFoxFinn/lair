@@ -19,7 +19,7 @@ const Lair = (props) => {
     return <div id={props.id} style={styles.column()} >
         <Header id={`${props.id}-lair-header`} data-testid={`${props.id}-lair-header`} ignoreContent={true} content='Header'/>
         <Landing id={`${props.id}-lair-landing`} data-testid={`${props.id}-lair-landing`} ignoreContent={true} content='Landing'/>
-        <Footer id={`${props.id}-lair-footer`} data-testid={`${props.id}-lair-footer`} ignoreContent={true} content='Footer'/>
+        <Footer id={`${props.id}-lair-footer`} data-testid={`${props.id}-lair-footer`} ignoreContent={false} content={{first:'Lair', second:'Footer pane', third:'testing', type:'triple'}}/>
     </div>;
 };
 
