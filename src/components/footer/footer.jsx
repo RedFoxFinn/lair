@@ -5,13 +5,18 @@ import styles from '../../tools/styles';
 const defaultContent = ['Lair', 'Footer pane'];
 
 const Footer = (props) => {
-  return props.ignoreContent || !props.content
-    ? <Default id={`${props.id}-default`} content={{first: defaultContent[0], second: defaultContent[1]}} />
-    : props.content.type === 'single'
-      ? <Single id={props.id} content={props.content.text} />
-      : props.content.type === 'double'
-        ? <Double id={props.id} content={{first: props.content.first, second: props.content.second}} />
-        : null;
+  if (props.ignoreContent || !props.content) {
+    return <Default id={`${props.id}-default`} content={{first: defaultContent[0], second: defaultContent[1]}} />;
+  } else if (props.content) {
+    switch (props.content.type) {
+      case 'single': return <Single id={props.id} content={props.content.text} />;
+      case 'double': return <Double id={props.id} content={{first: props.content.first, second: props.content.second}} />;
+      case 'triple': return <Triple id={props.id} content={{first: props.content.first, second: props.content.second, third: props.content.third}} />;
+      default: return null;
+    }
+  } else {
+    return null;
+  }
 };
 
 const Default = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style={styles.row()} >
@@ -27,5 +32,11 @@ const Double = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style=
   <p style={styles.footer_first()} >{content.first}</p>
   <p style={styles.footer_second()} >{content.second}</p>
 </div>;
+
+const Triple = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style={styles.row()} >
+  <p style={styles.footer_first()} >{content.first}</p>
+  <p style={styles.footer_second()} >{content.second}</p>
+  <p style={styles.footer_second()} >{content.third}</p>
+</div>;;
 
 export default connect()(Footer);
