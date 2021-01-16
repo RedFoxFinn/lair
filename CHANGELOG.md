@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.4](///compare/v0.9.3...v0.9.4) (2021-01-16)
+
+
+### Bug Fixes
+
+* footer_third marginLeft fixed from 1em to 0.5em 2cc083e
+
 ### [0.9.3](///compare/v0.9.2...v0.9.3) (2021-01-16)
 
 ### [0.9.2](///compare/v0.9.1...v0.9.2) (2021-01-16)
