@@ -3,17 +3,29 @@ import {connect} from 'react-redux';
 import styles from '../../tools/styles';
 
 const defaultContent = ['Lair', 'Footer pane'];
-const content = ['not', 'default'];
+
 const Footer = (props) => {
   return props.ignoreContent || !props.content
-    ? <div id={`${props.id}-default`} data-testid={`${props.id}-default`} style={styles.row()} >
-      <p style={styles.footer_first()} >{defaultContent[0]}</p>
-      <p style={styles.footer_second()} >{defaultContent[1]}</p>
-    </div>
-    : <div id={props.id} data-testid={props.id} style={styles.row()} >
-      <p style={styles.footer_first()} >{props.content ? props.content[0] : content[0]}</p>
-      <p style={styles.footer_second()} >{props.content ? props.content[1] : content[1]}</p>
-    </div>;
+    ? <Default id={`${props.id}-default`} content={{first: defaultContent[0], second: defaultContent[1]}} />
+    : props.content.type === 'single'
+      ? <Single id={props.id} content={props.content.text} />
+      : props.content.type === 'double'
+        ? <Double id={props.id} content={{first: props.content.first, second: props.content.second}} />
+        : null;
 };
+
+const Default = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style={styles.row()} >
+  <p style={styles.footer_first()} >{content.first}</p>
+  <p style={styles.footer_second()} >{content.second}</p>
+</div>;
+
+const Single = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style={styles.row()} >
+  <p style={styles.footer_first()} >{content}</p>
+</div>;
+
+const Double = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style={styles.row()} >
+  <p style={styles.footer_first()} >{content.first}</p>
+  <p style={styles.footer_second()} >{content.second}</p>
+</div>;
 
 export default connect()(Footer);

@@ -3,19 +3,11 @@
 
 ![JS](https://api.iconify.design/logos:javascript.svg?height=24)
 ![Node](https://api.iconify.design/logos:nodejs.svg?height=24)
-![Express](https://api.iconify.design/logos:express.svg?height=24)
 ![React](https://api.iconify.design/logos:react.svg?height=24)
 ![Redux](https://api.iconify.design/logos:redux.svg?height=24)
 ![Redux-Saga](https://api.iconify.design/logos:redux-saga.svg?height=24)
 ![GraphQL](https://api.iconify.design/logos:graphql.svg?height=24)
-![Apollo](https://api.iconify.design/logos:apollostack.svg?height=24)
 ![Jest](https://api.iconify.design/logos:jest.svg?height=24)
-![Ubuntu](https://api.iconify.design/logos:ubuntu.svg?height=24)
-![VS Code](https://api.iconify.design/logos:visual-studio-code.svg?height=24)
-![Git](https://api.iconify.design/logos:git.svg?height=24)
-![GitHub](https://api.iconify.design/logos:github-icon.svg?height=24)
-![Postman](https://api.iconify.design/logos:postman.svg?height=24)
-![Altair](https://api.iconify.design/logos:altair.svg?height=24)
 
 ## Status
 

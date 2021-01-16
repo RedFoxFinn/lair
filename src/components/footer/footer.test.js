@@ -6,22 +6,68 @@ import uuid from 'uuid';
 
 import state from '../../controllers/redux/state';
 import Footer from './footer';
+import { isCompositeComponentWithType } from 'react-dom/test-utils';
 
-describe('footer pane unit tests', () => {
+const newId = uuid;
+const singleContent = {
+    type: 'single',
+    text: 'ts' + newId
+};
+const doubleContent = {
+    type: 'double',
+    first: 't1-' + newId,
+    second: 't2-' + newId
+};
+
+describe('footer pane unit tests - content type double', () => {
     let variable = false;
-    const newId = uuid;
-    const newContent = uuid;
+    let component;
+
+    beforeEach(() => component = render(<Provider store={state}><Footer id={newId} content={doubleContent}/></Provider>));
+
     test('dummy test', () => {
         expect(variable).toBe(false);
         variable = true;
         expect(variable).toBe(true);
     });
+    test('footer renders', () => {
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer).toBeTruthy();
+        isCompositeComponentWithType(footer, Footer);
+    });
     test('footer gets correct id', () => {
-        const footer = <Footer id={newId}/>;
-        expect(footer.id).toBe(newId);
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer.id).toBe(`${newId}`);
     });
     test('footer gets correct content', () => {
-        const component = render(<Provider store={state}><Footer id={newId} content={newContent}/></Provider>);
-        expect(component.content).toBe(newContent);
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer.textContent).toContain(`${doubleContent.first}`);
+        expect(footer.textContent).toContain(`${doubleContent.second}`);
+    });
+});
+
+describe('footer pane unit tests - content type single', () => {
+    let variable = false;
+    let component;
+
+    beforeEach(() => component = render(<Provider store={state}><Footer id={newId} content={singleContent}/></Provider>));
+
+    test('dummy test', () => {
+        expect(variable).toBe(false);
+        variable = true;
+        expect(variable).toBe(true);
+    });
+    test('footer renders', () => {
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer).toBeTruthy();
+        isCompositeComponentWithType(footer, Footer);
+    });
+    test('footer gets correct id', () => {
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer.id).toBe(`${newId}`);
+    });
+    test('footer gets correct content', () => {
+        const footer = screen.queryByTestId(`${newId}`);
+        expect(footer.textContent).toContain(`${singleContent.text}`);
     });
 });
