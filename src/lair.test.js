@@ -16,7 +16,7 @@ describe('lair ui preliminary integration tests', () => {
     const newId = uuid;
     let lair;
 
-    beforeEach(() => lair = render(<Provider store={state}><Lair id={newId}/></Provider>));
+    beforeEach(() => lair = render(<Provider store={state}><Lair id={newId} default={true}/></Provider>));
     test('dummy test', () => {
         expect(variable).toBe(false);
         variable = true;
