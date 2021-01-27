@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](///compare/v0.9.6...v0.10.0) (2021-01-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* components Header & Footer now require props of correct types
+
+### Features
+
+* propTypes for Header & Footer, centralized PropTypes with types.js -tool 32fb0f7, closes #5 #6
+
 ### [0.9.6](///compare/v0.9.5...v0.9.6) (2021-01-27)
 
 ### [0.9.5](///compare/v0.9.4...v0.9.5) (2021-01-17)
