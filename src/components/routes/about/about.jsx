@@ -9,14 +9,13 @@ const About = (props) => {
     if (props.ignoreContent || !props.content) {
         return <Default id={props.id} />;
     } else {
-        switch (props.content.type) {
-            case 'single': return <SingleRow id={props.id} content={{first: props.content.text[0], second: props.content.text[1]}} />;
-            default: return null;
-        }
+        return props.content.type === 'single'
+            ? <SingleRow id={props.id} content={{first: props.content.first, second: props.content.second}} />
+            : null;
     }
 };
 
-const SingleRow = ({id, content}) => <div id={`${id}`} data-testid={`${id}`} style={styles.row()} >
+const SingleRow = ({id, content}) => <div id={id} data-testid={id} style={styles.row()} >
     <p>{content.first}</p>
     <p>{content.second}</p>
 </div>;

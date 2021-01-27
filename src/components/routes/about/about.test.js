@@ -9,28 +9,34 @@ import { isCompositeComponentWithType } from 'react-dom/test-utils';
 
 // imports for redux => modify beforeEach => modify tests
 
-const newId = uuid;
-const singleContent = {
-    type: 'single',
-    text: ['ts1-' + newId, 'ts2-' + newId]
+let newId = uuid;
+
+const characters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'];
+
+const getContent = (type, length) => {
+    switch (type) {
+        case 'single': return {type: 'single', first: getString(length), second: getString(length)};
+        case 'double':
+        case 'triple':
+        default: return null;
+    }
 };
-const doubleContent = {
-    type: 'double',
-    first: ['td1-' + newId, 'td2' + newId],
-    second: ['td3-' + newId, 'td4-' + newId]
-};
-const tripleContent = {
-    type: 'triple',
-    first: ['t1-' + newId, 't2-' + newId],
-    second: ['t3-' + newId, 't4-' + newId],
-    third: ['t5-' + newId, 't6-' + newId]
+
+const getString = (length) => {
+    let string = '';
+    for (let i = 0; i < length; i++) {
+        const character = characters[Math.floor(Math.random()*characters.length)];
+        string = `${string}${character}`;
+    }
+    return string;
 };
 
 describe('About unit tests - single row', () => {
     let dummy = false;
     let component;
-    
-    beforeEach(() => component = render(<Provider store={state}><About id={newId} ignoreContent={false} content={singleContent}/></Provider>));
+    const content = getContent('single',6);
+
+    beforeEach(() => component = render(<Provider store={state}><About id={newId} ignoreContent={false} content={content}/></Provider>));
 
     test('dummy test', () => {
         expect(dummy).toBe(false);
@@ -48,7 +54,7 @@ describe('About unit tests - single row', () => {
     });
     test('about gets correct content', () => {
         const about = screen.queryAllByTestId(`${newId}`);
-        expect(about.textContent).toContain(`${singleContent.text[0]}`);
-        expect(about.textContent).toContain(`${singleContent.text[1]}`);
+        expect(about.textContent).toBe(content.first);
+        expect(about.textContent).toBe(content.second);
     });
 });

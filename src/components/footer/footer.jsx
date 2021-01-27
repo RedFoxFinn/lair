@@ -12,7 +12,7 @@ const Footer = (props) => {
       case 'single': return <Single id={props.id} content={props.content.text} />;
       case 'double': return <Double id={props.id} content={{first: props.content.first, second: props.content.second}} />;
       case 'triple': return <Triple id={props.id} content={{first: props.content.first, second: props.content.second, third: props.content.third}} />;
-      default: return null;
+      default: return <Default id={`${props.id}-default`} content={{first: defaultContent[0], second: defaultContent[1]}} />;
     }
   } else {
     return null;
