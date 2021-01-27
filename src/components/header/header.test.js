@@ -11,7 +11,7 @@ import { isCompositeComponent, isCompositeComponentWithType } from 'react-dom/te
 const newId = uuid;
 const singleContent = {
     type: 'single',
-    text: 'ts' + newId
+    first: 'ts' + newId
 };
 const doubleContent = {
     type: 'double',
@@ -68,6 +68,6 @@ describe('header pane unit tests - content type single', () => {
     });
     test('header gets correct text content', () => {
         const header = screen.queryByTestId(`${newId}`);
-        expect(header.textContent).toContain(`${singleContent.text}`);
+        expect(header.textContent).toContain(`${singleContent.first}`);
     });
 });

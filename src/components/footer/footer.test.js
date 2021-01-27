@@ -11,7 +11,7 @@ import { isCompositeComponentWithType } from 'react-dom/test-utils';
 const newId = uuid;
 const singleContent = {
     type: 'single',
-    text: 'ts' + newId
+    first: 'ts' + newId
 };
 const doubleContent = {
     type: 'double',
@@ -102,6 +102,6 @@ describe('footer pane unit tests - content type single', () => {
     });
     test('footer gets correct content', () => {
         const footer = screen.queryByTestId(`${newId}`);
-        expect(footer.textContent).toContain(`${singleContent.text}`);
+        expect(footer.textContent).toContain(`${singleContent.first}`);
     });
 });
